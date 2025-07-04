@@ -151,7 +151,7 @@ Each `.sql` file in the `queries/` folder contains clean, commented SQL code for
 <summary><strong>👤 About Me</strong></summary>
 
 **Victor Adesoye**  
-Business Intelligence & Data Analyst  
+DSA Data Analyst Student 
 📧 victoradesoye@gmail.com  
 🌍 [LinkedIn](https://www.linkedin.com/in/victor-adesoye)
 
