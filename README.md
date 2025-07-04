@@ -67,11 +67,9 @@ FROM case_study
 GROUP BY [Product_Category]
 ORDER BY Total_Sales DESC;
 ```
-Output
-[image](https://github.com/user-attachments/assets/d89b7b0e-de86-48e9-b2cc-105ce6eb1aa5)
+**Output/Visual**
 
-
-
+[Image 1](https://github.com/user-attachments/assets/f9cb84eb-23d4-4ce9-ad76-4d394dda0f95)
 
 
 ```sql
@@ -90,6 +88,12 @@ FROM case_study
 GROUP BY Region
 ORDER BY Total_Sales ASC;
 ```
+
+**Output/Visual**
+
+
+[Image 2 1](https://github.com/user-attachments/assets/0798b69f-48d0-4254-bc9c-89e843e072c6)
+[Image 2 2](https://github.com/user-attachments/assets/e58219c5-3041-46c2-99f6-00043ec21e1e)
 
 ```sql
 -- 3. Total Sales of Appliances in Ontario
