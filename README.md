@@ -265,6 +265,6 @@ ORDER BY Order_Count DESC;
 ## 👤 About Me
 
 **Victor Adesoye**  
-Business Intelligence & Data Analyst  
+DSA Data Analyst Student
 📧 victoradesoye@gmail.com  
 🌍 [LinkedIn](https://linkedin.com/in/victor-adesoye)
