@@ -13,8 +13,7 @@ Focus: Abuja division, covering orders between **2009 and 2012**, using SQL for 
 
 ---
 
-<details>
-<summary><strong>🎯 Business Context</strong></summary>
+## 🎯 Business Context
 
 Kultra Mega Stores serves three types of customers:
 
