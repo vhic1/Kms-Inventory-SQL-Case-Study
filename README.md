@@ -214,20 +214,39 @@ ORDER BY Order_Count DESC;
 ---
 
 <details>
-<summary><strong>📈 Key Insights & Answers</strong></summary>
+<summary><strong>📈 Key Insights & Answers to the Questions</strong></summary>
 
-- **Technology** was the highest-selling product category.  
-- **Express Air** was the most expensive shipping method; however, many low-priority orders used it unnecessarily.  
-- **Emily Phan** was the most valuable and profitable customer (Tech-focused).  
-- **Dennis Kane** had the highest small business sales.  
-- **Adam Hart** placed the most corporate orders (18 total).  
-- **Over 800 orders** had mismatched shipping vs priority, costing KMS ₦25,000+.  
-- Most returns came from **Consumer** and **Small Business** segments.
+1. **Technology category** had the highest sales.
+
+2. **West, Ontario, and Prarie*** were the top regions in terms of sales.       -**Nunavut, Northwest Territories, and Yukon*** were the bottom regions.
+
+3. Total sales of appliances in Ontario was **₦202,347**.
+
+4. The bottom 10 customers showed low engagement and low spend across various categories.
+-**Recommendations:**
+   -Identify if these customers are inactive or new.
+   -Consider email campaigns, bundle offers, or enticing discounts.
+
+5.**Delivery Truck** incurred the most cost as a shipping method.  
+
+6.**Emily Phan** (Technology), **Deborah Brumfield** (Technology), **Roy Skaria** (Furniture) were top customers.
+
+7.**Dennis Kane** was the small business customer with the highest sales.
+
+8.**Adam Hart** placed the most corporate orders **(18 orders)**.
+
+9.**Emily Phan** was the most profitable consumer customer. 
+
+10.Over **419 unique customers** returned items across different segments.  
+
+11. While **most orders (5,101)** used appropriate shipping,
+-**822 orders were misaligned**, due to mismatched shipping vs priority.
+    -451 urgent orders used slow Delivery Truck — risking delays even though average delay looks low.
+    -371 non-urgent orders used Express Air — spending extra for speed they didn’t need.
 
 🔎 **Suggestions:**
 - Match shipping method to order priority to save cost.  
-- Increase revenue from bottom customers using campaigns or bundles.  
-- Focus marketing on top regions and best-performing categories.  
+- Increase revenue from bottom customers using campaigns or bundles.    
 - Track and reduce product returns.
 
 </details>
