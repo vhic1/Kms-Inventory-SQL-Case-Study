@@ -94,14 +94,15 @@ Each `.sql` file in the `queries/` folder contains clean, commented SQL code for
 
 1. **Technology category** had the highest sales.
 
-2. **West, Ontario, and Prarie** were the top regions in terms of sales.  
-- **Nunavut, Northwest Territories, and Yukon** were the bottom regions.
+2. **West, Ontario, and Prarie** were the top regions in terms of sales.
+     - **Nunavut, Northwest Territories, and Yukon** were the bottom regions.
 
-3. Total sales of appliances in Ontario was **₦202,346.9**.
+4. Total sales of appliances in Ontario was **₦202,346.9**.
 
-4. The bottom 10 customers showed low engagement and low spend across various categories.  
-  - **Recommendations:** Identify if these customers are inactive or new.  
-  - Consider email campaigns, bundle offers, or reactivation discounts.
+5. The bottom 10 customers showed low engagement and low spend across various categories.  
+  - **Recommendations:**
+      - Identify if these customers are inactive or new.
+      - Consider email campaigns, bundle offers, or reactivation discounts.
 
 5. **Delivery Truck** incurred the most cost as a shipping method.
 
