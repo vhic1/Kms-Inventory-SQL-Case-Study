@@ -68,6 +68,8 @@ GROUP BY [Product_Category]
 ORDER BY Total_Sales DESC;
 ```
 
+
+
 ```sql
 -- 2. Top 3 and Bottom 3 Regions by Sales
 ---Top 3 Regions
