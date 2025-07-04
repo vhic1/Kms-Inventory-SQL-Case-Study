@@ -218,8 +218,8 @@ ORDER BY Order_Count DESC;
 
 1. **Technology category** had the highest sales.
 
-2. **West, Ontario, and Prarie*** were the top regions in terms of sales.
-        -**Nunavut, Northwest Territories, and Yukon*** were the bottom regions.
+2. **West, Ontario, and Prarie** were the top regions in terms of sales.
+        -**Nunavut, Northwest Territories, and Yukon** were the bottom regions.
 
 3. Total sales of appliances in Ontario was **₦202,347**.
 
