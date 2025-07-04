@@ -67,7 +67,9 @@ FROM case_study
 GROUP BY [Product_Category]
 ORDER BY Total_Sales DESC;
 ```
-[Image 1](https://github.com/user-attachments/assets/6cd47eb3-d41b-4cd2-b3ea-6e4b42037be4)
+Output
+![image](https://github.com/user-attachments/assets/d89b7b0e-de86-48e9-b2cc-105ce6eb1aa5)
+
 
 
 
