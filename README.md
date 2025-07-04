@@ -68,7 +68,7 @@ GROUP BY [Product_Category]
 ORDER BY Total_Sales DESC;
 ```
 Output
-![image](https://github.com/user-attachments/assets/d89b7b0e-de86-48e9-b2cc-105ce6eb1aa5)
+[image](https://github.com/user-attachments/assets/d89b7b0e-de86-48e9-b2cc-105ce6eb1aa5)
 
 
 
