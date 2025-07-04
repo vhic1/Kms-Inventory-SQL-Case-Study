@@ -1,158 +1,137 @@
 
 # 🧾 Kultra Mega Stores – SQL Case Study (2009–2012)
 
-This project analyzes sales and shipping data for **Kultra Mega Stores (KMS)**, a Nigerian office supplies and furniture company headquartered in Lagos.
+This project analyzes office supply and furniture sales data for **Kultra Mega Stores (KMS)** in Nigeria.  
+Focus: Abuja division, covering orders between **2009 and 2012**, using SQL for business analysis.
 
-The focus is on orders from **2009 to 2012**, specifically from the **Abuja division**, to uncover key business insights using SQL.
+---
+
+## 📦 Dataset Summary
+
+- `KMS Sql Case Study.csv`: Orders, products, customers, regions, shipping, and sales.
+- `Order_Status.csv`: Information on returned orders.
 
 ---
 
 <details>
-<summary><strong>🎯 Business Context</strong></summary>
-
-Kultra Mega Stores serves three types of customers:
-
-- Individual Consumers  
-- Small Businesses (Retail)  
-- Large Corporations (Wholesale)  
-
-I am a **Business Intelligence Analyst** helping the Abuja branch use its data to answer operational and customer questions. The data was provided in CSV format and imported into a SQL Server database table named `Cases_Study` and `Order_Status`.
-
-</details>
-
----
-
-<details>
-<summary><strong>🗂️ Folder Structure</strong></summary>
-
-```
-kms-inventory-sql-case-study/
-│
-├── data/
-→ Raw CSV files
-│   ├── KMS Sql Case Study.csv
-│   └── Order_Status.csv
-│
-├── queries/
-→ SQL scripts for each business question
-│   ├── 01_Product_Category_With_Highest_Sales.sql
-│   ├── 02_Top 3_And_Bottom 3_Regions_By_Sales.sql
-│   ├── 03_Total_Appliances_Sale_Ontario.sql
-│   ├── 04_Bottom 10_Customers.sql
-│   ├── 05_Most_Shipping_Cost_Using_A_Particular_Shipping_Method.sql
-│   ├── 06_top_customers_by_sales.sql
-│   ├── 07_Small_Business_Customer_With_Highest_Sales.sql
-│   ├── 08_Corporate_Customer_With_Most_Orders_2009-2012.sql
-│   ├── 09_most_profitable_consumer_customer.sql
-│   ├── 10_customer_returns.sql
-│   └── 11_shipping_evaluation.sql
-│
-├── output/
-→ Screenshots of query results
-
-```
-
-</details>
-
----
-
-<details>
-<summary><strong>📊 Business Questions Answered with SQL</strong></summary>
+<summary><strong>📊 Business Questions Answered</strong></summary>
 
 ### 📌 Case Scenario I
 1. Which product category had the highest sales?  
-
 2. What are the Top 3 and Bottom 3 regions in terms of sales?  
-
 3. What were the total sales of appliances in Ontario?  
-
-4. Advise the management on what is needed to increase the revenue from the bottom 10 customers  
-
-5. Which shipping method cost the most?  
+4. What should KMS do to increase revenue from the bottom 10 customers?  
+5. Which shipping method cost the most?
 
 ### 📌 Case Scenario II
-6. Who are the most valuable customers and what do they purchase?  
-
+6. Who are the most valuable customers and what do they typically purchase?  
 7. Which small business customer had the highest sales?  
-
-8. Which corporate customer placed the most orders between 2009 and 2012?  
-
+8. Which corporate customer placed the most number of orders between 2009–2012?  
 9. Which consumer customer was the most profitable?  
-
-10. Which customers returned items, and what segment do they belong to?  
-
-11. Did KMS spend shipping costs appropriately based on order priority?
-
-Each `.sql` file in the `queries/` folder contains clean, commented SQL code for answering each question.
+10. Which customer returned items, and what segment do they belong to?  
+11. Did KMS appropriately spend shipping costs based on order priority?
 
 </details>
 
 ---
 
+## 🧾 Sample SQL Queries
+
+```sql
+-- 1. Product Category with the Highest Sales
+SELECT Product_Category, SUM(Sales) AS Total_Sales
+FROM Cases_Study
+GROUP BY Product_Category
+ORDER BY Total_Sales DESC;
+```
+
+```sql
+-- 2. Top 3 and Bottom 3 Regions by Sales
+-- Top 3
+SELECT TOP 3 Region, SUM(Sales) AS Total_Sales
+FROM Cases_Study
+GROUP BY Region
+ORDER BY Total_Sales DESC;
+
+-- Bottom 3
+SELECT TOP 3 Region, SUM(Sales) AS Total_Sales
+FROM Cases_Study
+GROUP BY Region
+ORDER BY Total_Sales ASC;
+```
+
+```sql
+-- 3. Total Sales of Appliances in Ontario
+SELECT SUM(Sales) AS Total_Appliance_Sales
+FROM Cases_Study
+WHERE Product_Sub_Category = 'Appliances'
+  AND Province = 'Ontario';
+```
+
+```sql
+-- 5. Shipping Method with the Most Shipping Cost
+SELECT Ship_Mode, SUM(Shipping_Cost) AS Total_Shipping_Cost
+FROM Cases_Study
+GROUP BY Ship_Mode
+ORDER BY Total_Shipping_Cost DESC;
+```
+
+```sql
+-- 11. Did Shipping Method Match Order Priority?
+WITH EvaluatedOrders AS (
+    SELECT Order_ID, Order_Priority, Ship_Mode, Shipping_Cost,
+           DATEDIFF(DAY, Order_Date, [Ship Date]) AS Shipping_Delay,
+           CASE 
+               WHEN Order_Priority IN ('Low', 'Medium') AND Ship_Mode = 'Express Air' THEN 'Unnecessary Express'
+               WHEN Order_Priority IN ('High', 'Critical') AND Ship_Mode = 'Delivery Truck' THEN 'Slow for Urgent Order'
+               ELSE 'Appropriate'
+           END AS Shipping_Evaluation
+    FROM Cases_Study
+)
+SELECT Shipping_Evaluation,
+       COUNT(DISTINCT Order_ID) AS Order_Count,
+       SUM(Shipping_Cost) AS Total_Shipping_Cost,
+       AVG(Shipping_Cost) AS Average_Shipping_Cost,
+       AVG(Shipping_Delay) AS Average_Shipping_Delay
+FROM EvaluatedOrders
+GROUP BY Shipping_Evaluation
+ORDER BY Order_Count DESC;
+```
+
+---
+
 <details>
-<summary><strong>🧠 Key Insights/Answers (Summary)</strong></summary>
+<summary><strong>📈 Key Insights & Recommendations</strong></summary>
 
-1. **Technology category** had the highest sales.
+- **Technology** was the highest-selling product category.  
+- **Express Air** was the most expensive shipping method; however, many low-priority orders used it unnecessarily.  
+- **Emily Phan** was the most valuable and profitable customer (Tech-focused).  
+- **Dennis Kane** had the highest small business sales.  
+- **Adam Hart** placed the most corporate orders (18 total).  
+- **Over 800 orders** had mismatched shipping vs priority, costing KMS ₦25,000+.  
+- Most returns came from **Consumer** and **Small Business** segments.
 
-2. **West, Ontario, and Prarie** were the top regions in terms of sales.
-     - **Nunavut, Northwest Territories, and Yukon** were the bottom regions.
-
-4. Total sales of appliances in Ontario was **₦202,346.9**.
-
-5. The bottom 10 customers showed low engagement and low spend across various categories.  
-  - **Recommendations:**
-      - Identify if these customers are inactive or new.
-      - Consider email campaigns, bundle offers, or reactivation discounts.
-
-5. **Delivery Truck** incurred the most cost as a shipping method.
-
-6. **Emily Phan** (Technology), **Deborah Brumfield** (Technology), **Roy Skaria** (Furniture) were top customers.
-
-7. **Dennis Kane** was the small business customer with the highest sales.
-
-8. **Adam Hart** placed the most corporate orders (18 orders).
-
-9. **Emily Phan** was the most profitable consumer customer.
-
-10. Over **419 unique customers** returned items.
-
-11. Even though average delays were low, using inappropriate shipping methods;
-- **Most orders (5,101)** used the correct shipping method.
-- **822 orders were misaligned**:
-     - **451 urgent orders** used slow Delivery Truck — risking delays even though average delay looks low as well.
-     - **371 non-urgent orders** used Express Air — spending extra for speed they didn’t need..
+🔎 **Suggestions:**
+- Match shipping method to order priority to save cost.  
+- Increase revenue from bottom customers using campaigns or bundles.  
+- Focus marketing on top regions and best-performing categories.  
+- Track and reduce product returns.
 
 </details>
 
 ---
 
-<details>
-<summary><strong>🛠 Tools & Technologies</strong></summary>
+## 💻 Tools Used
 
-- SQL Server (SQL Server Management Studio 20)
-
-</details>
-
----
-
-<details>
-<summary><strong>🚀 How to Use This Project</strong></summary>
-
-1. Download or clone the repo from GitHub  
-2. Import the CSV files into SQL Server as tables (`Cases_Study`, etc.)  
-3. Open and run the `.sql` files in the `queries/` folder  
-4. Explore the output  
-
-</details>
+- SQL Server Management Studio  
+- Excel (for dataset review)  
+- GitHub (for portfolio sharing)
 
 ---
 
-<details>
-<summary><strong>👤 About Me</strong></summary>
+## 👤 About Me
 
 **Victor Adesoye**  
-DSA Data Analyst Student 
+Business Intelligence & Data Analyst  
 📧 victoradesoye@gmail.com  
-🌍 [LinkedIn](https://www.linkedin.com/in/victor-adesoye)
-
-</details>
+🌍 [LinkedIn](https://linkedin.com/in/victor-adesoye)
