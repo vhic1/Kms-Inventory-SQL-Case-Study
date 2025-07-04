@@ -275,10 +275,10 @@ ORDER BY Order_Count DESC;
 
 4. The bottom 10 customers showed low engagement and low spend across various categories.
 - **Recommendations:**
-      - Identify if these customers are inactive or new.
-      - Consider email campaigns, bundle offers, or enticing discounts.
+    - Identify if these customers are inactive or new.
+    - Consider email campaigns, bundle offers, or enticing discounts.
 
-5.**Delivery Truck** incurred the most cost as a shipping method.  
+5.**Delivery Truck** incurred the most cost as a shipping method.
 
 6.**Emily Phan** (Technology), **Deborah Brumfield** (Technology), **Roy Skaria** (Furniture) were top customers.
 
@@ -292,8 +292,8 @@ ORDER BY Order_Count DESC;
 
 11. While **most orders (5,101)** used appropriate shipping,
 - **822 orders were misaligned**, due to mismatched shipping vs priority.
-- 451 urgent orders used slow Delivery Truck — risking delays even though average delay looks low.
-- 371 non-urgent orders used Express Air — spending extra for speed they didn’t need.
+    - 451 urgent orders used slow Delivery Truck — risking delays even though average delay looks low.
+    - 371 non-urgent orders used Express Air — spending extra for speed they didn’t need.
 
 🔎 **Suggestions:**
 - Match shipping method to order priority to save cost.  
