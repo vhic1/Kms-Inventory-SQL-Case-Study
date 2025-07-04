@@ -1,4 +1,4 @@
-
+![Image 7](https://github.com/user-attachments/assets/157979a8-5515-42a9-89bc-58a8a25988f6)
 # 🧾 Kultra Mega Stores – SQL Case Study (2009–2012)
 
 This project analyzes office supply and furniture sales data for **Kultra Mega Stores (KMS)** in Nigeria.  
@@ -67,6 +67,7 @@ FROM case_study
 GROUP BY [Product_Category]
 ORDER BY Total_Sales DESC;
 ```
+
 **Output/Visual**
 
 [Image 1](https://github.com/user-attachments/assets/f9cb84eb-23d4-4ce9-ad76-4d394dda0f95)
@@ -103,6 +104,11 @@ WHERE Region = 'Ontario' AND Product_Sub_Category = 'Appliances'
 GROUP BY Region, Product_Sub_Category
 ```
 
+**Output/Visual**
+
+[Image 3](https://github.com/user-attachments/assets/eec57459-bf6e-4792-b067-646c8398046b)
+
+
 ```sql
 -- 4. What should KMS do to increase revenue from the bottom 10 customers?  
 SELECT TOP 10 [Customer_Name],
@@ -112,6 +118,11 @@ GROUP BY [Customer_Name]
 ORDER BY Total_Sales ASC;
 ```
 
+**Output/Visual**
+
+[Image 4](https://github.com/user-attachments/assets/70f172ea-b57d-4bc0-87fb-ac9caf7f729b)
+
+
 ```sql
 -- 5. Which shipping method cost the most?
 SELECT Ship_Mode, SUM(Shipping_Cost) AS Total_Shipping_Cost
@@ -119,6 +130,10 @@ FROM Case_Study
 GROUP BY Ship_Mode
 ORDER BY Total_Shipping_Cost DESC;
 ```
+
+**Output/Visual**
+
+[Image 5](https://github.com/user-attachments/assets/b253c3d0-2c1a-4b3e-a018-f1da6810ae8f)
 
 ```sql
 -- 6. Who are the most valuable customers and what do they typically purchase?  
@@ -155,6 +170,10 @@ WHERE rc.rn = 1
 ORDER BY t5.Total_Sales DESC;
 ```
 
+**Output/Visual**
+
+[Image 6](https://github.com/user-attachments/assets/45f7ca05-7ad6-459f-b23c-0b6450d9e800)
+
 ```sql
 -- 7. Which small business customer had the highest sales? 
 SELECT TOP 1 Customer_Name, SUM(Sales) AS Total_Sales
@@ -163,6 +182,12 @@ WHERE Customer_Segment = 'Small Business'
 GROUP BY Customer_Name
 ORDER BY Total_Sales DESC;
 ```
+
+**Output/Visual**
+
+[Image 7](https://github.com/user-attachments/assets/3e7fbfe2-ad72-4b88-98fb-eb82ed951cbd)
+
+
 
 ```sql
 -- 8. Which corporate customer placed the most number of orders in 2009-2012?
@@ -173,6 +198,11 @@ GROUP BY Customer_Name
 ORDER BY Number_Of_Orders DESC;
 ```
 
+**Output/Visual**
+
+[Image 8](https://github.com/user-attachments/assets/08e0f285-ddd0-4f10-ac99-987908416c35)
+
+
 ```sql
 -- 9.  Which consumer customer was the most profitable?  
 SELECT TOP 1 Customer_Name, SUM(Profit) AS Total_Profit
@@ -181,6 +211,11 @@ WHERE Customer_Segment = 'Consumer'
 GROUP BY Customer_Name
 ORDER BY Total_Profit DESC;
 ```
+
+**Output/Visual**
+
+[Image 9](https://github.com/user-attachments/assets/0d33e0e5-2c4a-45ef-b2f2-7c622323ce71)
+
 
 ```sql
 -- 10. Which customer returned items, and what segment do they belong to?  SELECT DISTINCT 
@@ -191,6 +226,11 @@ INNER JOIN
 Order_Status os ON cs.[Order_ID] = os.[Order_ID]
 WHERE os.[Status] = 'Returned';
 ```
+
+**Output/Visual**
+
+[Image 10](https://github.com/user-attachments/assets/2a0695d5-a620-4a31-bf87-a28d5f4e9352)
+
 
 ```sql
 -- 11. Did KMS appropriately spend shipping costs based on order priority?
@@ -216,6 +256,11 @@ GROUP BY Shipping_Evaluation
 ORDER BY Order_Count DESC;
 ```
 
+**Output/Visual**
+
+[Image 11](https://github.com/user-attachments/assets/342d0d88-5938-43b2-83ca-d068dd2355a3)
+
+
 
 ---
 
@@ -230,9 +275,9 @@ ORDER BY Order_Count DESC;
 3. Total sales of appliances in Ontario was **₦202,347**.
 
 4. The bottom 10 customers showed low engagement and low spend across various categories.
-       -**Recommendations:**
-           --Identify if these customers are inactive or new.
-           --Consider email campaigns, bundle offers, or enticing discounts.
+       .**Recommendations:**
+           .Identify if these customers are inactive or new.
+            .Consider email campaigns, bundle offers, or enticing discounts.
 
 5.**Delivery Truck** incurred the most cost as a shipping method.  
 
