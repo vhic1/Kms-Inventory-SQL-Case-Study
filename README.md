@@ -314,7 +314,7 @@ ORDER BY Order_Count DESC;
 
 ## 👤 About Me
 
-**Victor Adesoye**  
-DSA Data Analyst Student 
-📧 victoradesoye@gmail.com  
-🌍 [LinkedIn](https://linkedin.com/in/victor-adesoye)
+- **Victor Adesoye**
+- DSA Data Analyst Student
+- 📧 victoradesoye@gmail.com
+- 🌍 [LinkedIn](https://linkedin.com/in/victor-adesoye)
