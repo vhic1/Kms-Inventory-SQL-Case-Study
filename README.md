@@ -50,8 +50,6 @@ kms-inventory-sql-case-study/
 ├── output/
 → Screenshots of query results
 
-├── README.md
-→ This documentation file
 ```
 
 </details>
@@ -63,17 +61,26 @@ kms-inventory-sql-case-study/
 
 ### 📌 Case Scenario I
 1. Which product category had the highest sales?  
+
 2. What are the Top 3 and Bottom 3 regions in terms of sales?  
+
 3. What were the total sales of appliances in Ontario?  
+
 4. Advise the management on what is needed to increase the revenue from the bottom 10 customers  
+
 5. Which shipping method cost the most?  
 
 ### 📌 Case Scenario II
 6. Who are the most valuable customers and what do they purchase?  
+
 7. Which small business customer had the highest sales?  
+
 8. Which corporate customer placed the most orders between 2009 and 2012?  
+
 9. Which consumer customer was the most profitable?  
+
 10. Which customers returned items, and what segment do they belong to?  
+
 11. Did KMS spend shipping costs appropriately based on order priority?
 
 Each `.sql` file in the `queries/` folder contains clean, commented SQL code for answering each question.
@@ -85,20 +92,34 @@ Each `.sql` file in the `queries/` folder contains clean, commented SQL code for
 <details>
 <summary><strong>🧠 Key Insights/Answers (Summary)</strong></summary>
 
-- **Technology category** had the highest sales.  
-- **West, Ontario, and Prarie*** were the top regions in terms of sales.  
-- **Nunavut, Northwest Territories, and Yukon*** were the bottom regions.  
-- Total sales of appliances in Ontario was **₦202,346.9**  
-- The bottom 10 customers showed low engagement and low spend across various categories.  
-  **Recommendations:** Identify if these customers are inactive or new.  
-  Consider email campaigns, bundle offers, or reactivation discounts.  
-- **Delivery Truck** incurred the most cost as a shipping method.  
-- **Emily Phan** (Technology), **Deborah Brumfield** (Technology), **Roy Skaria** (Furniture) were top customers.  
-- **Dennis Kane** was the small business customer with the highest sales.  
-- **Adam Hart** placed the most corporate orders (18 orders).  
-- **Emily Phan** was the most profitable consumer customer.  
-- Over **419 unique customers** returned items.  
-- While most orders (5,101) used appropriate shipping, **822 orders were misaligned**, wasting ₦25,000+ due to mismatched shipping vs priority.
+1. **Technology category** had the highest sales.
+
+2. **West, Ontario, and Prarie** were the top regions in terms of sales.  
+- **Nunavut, Northwest Territories, and Yukon** were the bottom regions.
+
+3. Total sales of appliances in Ontario was **₦202,346.9**.
+
+4. The bottom 10 customers showed low engagement and low spend across various categories.  
+  - **Recommendations:** Identify if these customers are inactive or new.  
+  - Consider email campaigns, bundle offers, or reactivation discounts.
+
+5. **Delivery Truck** incurred the most cost as a shipping method.
+
+6. **Emily Phan** (Technology), **Deborah Brumfield** (Technology), **Roy Skaria** (Furniture) were top customers.
+
+7. **Dennis Kane** was the small business customer with the highest sales.
+
+8. **Adam Hart** placed the most corporate orders (18 orders).
+
+9. **Emily Phan** was the most profitable consumer customer.
+
+10. Over **419 unique customers** returned items.
+
+11. Even though average delays were low, using inappropriate shipping methods;
+- **Most orders (5,101)** used the correct shipping method.
+- **822 orders were misaligned**:
+     - **451 urgent orders** used slow Delivery Truck — risking delays even though average delay looks low as well.
+     - **371 non-urgent orders** used Express Air — spending extra for speed they didn’t need..
 
 </details>
 
